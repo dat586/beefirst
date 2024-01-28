@@ -12,7 +12,7 @@ do
     cpu=$(echo "$process" | awk '{print $9}')  # Find CPU metric and assign
     mem=$(echo "$process" | awk '{print $10}')  # Find memory metric and assign
     cpuHigh=$(echo "$cpu > 50" | bc -l)  # Evaluate if CPU is over 50%, returns 1 if true
-    memHigh=$(echo "$mem > 50" | bc -l)  # Evaluate if CPU is over 50%, returns 1 if true
+    memHigh=$(echo "$mem > 50" | bc -l)  # Evaluate if memory is over 50%, returns 1 if true
     if [[ $cpuHigh == 1 || $memHigh == 1 ]]; then
         report+=("$process")  # If CPU or memory is over 50%, write the process to the report
     fi
