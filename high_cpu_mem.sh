@@ -1,7 +1,7 @@
 #!/bin/bash
 
 topHeader=$(top -b -n 1 | sed -n '7p')
-topOutput=$(top -b -n 1 | sed '1,7d')  # Using top to avoid permission issues
+topOutput=$(top -b -n 1 | sed '1,7d')  # Using top to avoid permission issues with viewing processes
 IFS='
 '  # Change field separator to new line
 
